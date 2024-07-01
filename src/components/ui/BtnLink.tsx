@@ -13,7 +13,7 @@ export const BtnLink: React.FC<Props> = forwardRef<HTMLAnchorElement, Props>(
             ref={ref}
             to={href}
             {...props}
-            className={`flex items-center justify-center w-full sm:w-fit sm:min-w-32 lg:min-w-36 h-10 lg:h-11 font-media px-4 rounded text-[#fff] bg-black transition-opacity duration-300 hover:opacity-80 ${className}`}
+            className={`flex items-center justify-center w-full sm:w-fit sm:min-w-28 lg:min-w-32 h-10 lg:h-11 font-media px-4 rounded text-white bg-blue transition-opacity duration-300 hover:opacity-80 ${className}`}
         >
             {children}
         </Link>

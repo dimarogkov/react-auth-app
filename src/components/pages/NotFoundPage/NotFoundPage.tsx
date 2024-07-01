@@ -1,8 +1,9 @@
+import { Page } from '../../elements/Page';
 import { BtnLink, Text, Title } from '../../ui';
 
 export const NotFoundPage = () => {
     return (
-        <section className='relative w-full'>
+        <Page>
             <Title className='mb-2 last:mb-0'>Ooops! Page Not Found</Title>
 
             <Text className='mb-5 last:mb-0'>
@@ -10,6 +11,6 @@ export const NotFoundPage = () => {
             </Text>
 
             <BtnLink href='/'>Go Back-Home</BtnLink>
-        </section>
+        </Page>
     );
 };
