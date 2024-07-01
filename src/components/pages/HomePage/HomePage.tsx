@@ -1,17 +1,19 @@
-import { Form } from '../../elements/Form';
-import { Store } from '../../elements/Store';
-import { Text, Title } from '../../ui';
+import { useAuth0 } from '@auth0/auth0-react';
+import { Page } from '../../elements/Page';
+import { Login } from '../../elements/Login';
+import { UserInfo } from '../../elements/UserInfo';
+import { Loader } from '../../ui';
 
 export const HomePage = () => {
-    return (
-        <section className='relative w-full'>
-            <div className='w-full mb-5 last:mb-0'>
-                <Title className='mb-2 last:mb-0'>Home Page</Title>
-                <Text>This is Home Page.</Text>
-            </div>
+    const { isAuthenticated, isLoading } = useAuth0();
 
-            <Store />
-            <Form />
-        </section>
+    return (
+        <Page>
+            {!isAuthenticated && !isLoading && <Login />}
+
+            {isLoading && <Loader />}
+
+            {isAuthenticated && <UserInfo />}
+        </Page>
     );
 };
