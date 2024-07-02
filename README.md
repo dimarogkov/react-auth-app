@@ -1,6 +1,6 @@
 # React Auth App
 
-[Project Demo](https://dimarogkov.github.io//react-auth-app)
+[Project Demo](https://dimarogkov.github.io/react-auth-app)
 
 ## About
 

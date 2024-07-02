@@ -18,7 +18,7 @@ export const Login = () => {
 
             <div className='relative w-full md:w-[55%] lg:w-[50%] h-[50%] sm:h-[56%] md:h-full rounded-3xl overflow-hidden mb-6 md:mb-0 bg-grey'>
                 <img
-                    src='/login.jpg'
+                    src='login.jpg'
                     alt='login_img'
                     className='absolute top-0 left-0 w-full h-full object-cover object-center'
                 />
