@@ -1,13 +1,11 @@
+import { useLocation } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import { FaReact } from 'react-icons/fa';
 import cn from 'classnames';
-import { useLocation } from 'react-router-dom';
 
 export const Header = () => {
     const { isAuthenticated } = useAuth0();
     const { pathname } = useLocation();
-
-    console.log(pathname);
 
     return (
         <header

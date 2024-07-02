@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-
-import { REACT_APP_AUTH0_REDIRECT_URI } from '../../../variables';
 import { UserInfo as UserInfoType } from '../../../types/interfaces/UserInfo';
 
+import { UserInfoHead } from '../UserInfoHead';
 import { UserInfoTable } from '../UserInfoTable';
 import { UserInfoForm } from '../UserInfoForm';
-import { Btn, Title } from '../../ui';
+import { Btn } from '../../ui';
 
 export const UserInfo = () => {
     const [userInfo, setUserInfo] = useState<UserInfoType[]>([]);
     const [currentInfo, setCurrentInfo] = useState<UserInfoType | null>(null);
-    const [userName, setUserName] = useState('');
     const [isFormShow, setIsFormShow] = useState(false);
+    const [userName, setUserName] = useState('');
     const { logout, user } = useAuth0();
 
     useEffect(() => {
@@ -29,7 +28,7 @@ export const UserInfo = () => {
         setIsFormShow(true);
     };
 
-    const removeItem = (currentId: string) => {
+    const removeInfo = (currentId: string) => {
         return setUserInfo((prevState) => prevState.filter(({ id }) => id !== currentId));
     };
 
@@ -57,13 +56,10 @@ export const UserInfo = () => {
 
     return (
         <div className='w-full pt-20 sm:pt-24'>
-            <div className='flex items-center justify-between w-full mb-8 last:mb-0'>
-                <Title>Hi, {userName}!</Title>
-                <Btn onClick={() => logout({ logoutParams: { returnTo: REACT_APP_AUTH0_REDIRECT_URI } })}>Log Out</Btn>
-            </div>
+            <UserInfoHead userName={userName} logout={logout} />
 
             {!isFormShow ? (
-                <UserInfoTable userInfo={userInfo} changeInfo={changeInfo} removeItem={removeItem} />
+                <UserInfoTable userInfo={userInfo} changeInfo={changeInfo} removeInfo={removeInfo} />
             ) : (
                 <>
                     {currentInfo ? (
