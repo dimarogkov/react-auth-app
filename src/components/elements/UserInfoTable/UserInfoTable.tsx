@@ -11,7 +11,7 @@ type Props = {
 export const UserInfoTable: React.FC<Props> = ({ userInfo, changeInfo = () => {}, removeInfo = () => {} }) => {
     return (
         <div className='w-full overflow-x-auto mb-5 md:mb-6 last:mb-0'>
-            <table className='relative table-fixed w-full min-w-[800px] text-left border border-collapse break-all border-grey'>
+            <table className='relative table-fixed w-full min-w-[800px] text-left border border-collapse break-all text-black border-grey'>
                 <thead>
                     <tr>
                         <th className='w-48 border border-grey p-2'>Label</th>
