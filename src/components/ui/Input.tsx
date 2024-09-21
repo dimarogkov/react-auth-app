@@ -14,7 +14,7 @@ export const Input: React.FC<Props> = forwardRef<HTMLInputElement, Props>(
         <input
             ref={ref}
             {...props}
-            className={`w-full h-10 px-4 rounded border border-grey text-dark outline-none transition-all duration-300 focus:border-dark ${className}`}
+            className={`w-full h-10 px-4 rounded border border-grey text-dark bg-[#fff] outline-none transition-all duration-300 focus:border-dark ${className}`}
             {...register(registerName)}
         />
     )

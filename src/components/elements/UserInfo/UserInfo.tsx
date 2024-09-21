@@ -55,7 +55,7 @@ export const UserInfo = () => {
     };
 
     return (
-        <div className='w-full pt-20 sm:pt-24'>
+        <div className='w-full pt-16 sm:pt-20 md:pt-24'>
             <UserInfoHead userName={userName} logout={logout} />
 
             {!isFormShow ? (
