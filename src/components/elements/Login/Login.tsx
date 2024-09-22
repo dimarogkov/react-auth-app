@@ -5,7 +5,7 @@ export const Login = () => {
     const { loginWithRedirect } = useAuth0();
 
     return (
-        <div className='fixed top-0 left-0 flex flex-col-reverse md:flex-row items-center justify-center w-full h-full p-5 bg-white'>
+        <div className='relative flex flex-col-reverse md:flex-row items-center justify-center w-full h-full'>
             <div className='w-full sm:w-[70%] md:w-[45%] lg:w-[50%] text-center md:text-left'>
                 <Title className='mb-6 xl:mb-8 last:mb-0'>
                     Welcome back to <br /> React Auth App
